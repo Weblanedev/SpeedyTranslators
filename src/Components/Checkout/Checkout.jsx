@@ -1,15 +1,24 @@
 import React, { useState } from "react";
-import "./Checkout.css";
 import { Link } from "react-router-dom";
 import { COUNTRIES_AND_STATES } from "../../country-states";
 import { useModals } from "../../useModal";
 import ShowOrderModal from "../show-order";
 import ScrollToTop from "../scrollToTop/ScrollToTop";
+import "./Checkout.css";
+
+const gymOptions = {
+  'Regular': '25,000',
+  'Silver': '38,000',
+  'Gold': '51,000',
+  'Platinum': '64,000'
+};
 
 const Checkout = () => {
   // const [navbarVisible, setNavbarVisible] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedState, setSelectedState] = useState("");
+  const [selectedGym, setSelectedGym] = useState('Regular');
+  const [amount, setAmount] = useState(gymOptions[selectedGym]);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -26,16 +35,6 @@ const Checkout = () => {
     amount: "",
     expire_date: "",
   });
-
-  const gymOptions = {
-    'Regular': '25,000',
-    'Silver': '38,000',
-    'Gold': '51,000',
-    'Platinum': '64,000'
-  };
-
-  const [selectedGym, setSelectedGym] = useState('Regular');
-  const [amount, setAmount] = useState(gymOptions[selectedGym]);
 
   const handleGymChange = (event) => {
     setSelectedGym(event.target.value);
@@ -105,7 +104,7 @@ const Checkout = () => {
 
           <div className="absolute top-0 z-20 text-white flex flex-col gap-9 md:gap-12 items-center justify-center h-full w-full">
             <h1 className="font-medium md:font-semibold text-[40px] md:text-[60px] w-full sm:w-[550px] md:w-[560px] text-center leading-snug md:leading-[72px]">
-              Let's get you started
+              Hire a Translator
             </h1>
           </div>
         </section>
@@ -113,7 +112,7 @@ const Checkout = () => {
         <section className="relative p-10 md:px-[130px] md:py-[130px] flex flex-col md:flex-row gap-8 items-center md:items-start w-full justify-center">
           <div className="flex flex-col gap-8 items-start w-full justify-center md:pr-8 md:border-r">
             <div className="flex flex-col gap-2.5 text-[#181616] items-start justify-center md:w-[720px]">
-              <h2 className="text-[32px] font-medium">Personal information</h2>
+              <h2 className="text-[32px] font-medium">Your information</h2>
             </div>
 
             <div className="w-full md:w-[720px]">
@@ -234,37 +233,35 @@ const Checkout = () => {
 
           <div className="flex flex-col gap-[15px] items-start w-full justify-center">
             <h4 className="font-bold text-[#a20401] leading-[28px]">
-              MEMBERSHIP SUBSCRIPTION
+              Order translation from freelance translators
             </h4>
             <div className="flex flex-col items-start justify-center w-full gap-5">
-              <p className="text-[#707070] font-normal text-[13px]">
-                We believe in empowering your fitness journey with our amazing trainers, state-of-the-art equipment, and a welcoming environment. Our gym floor is equipped with top-tier brands ensuring a premium workout experience
-                Every new member receives a complimentary Fitness Assessment, a Personal Training session, and a Body Composition Assessment.
-              </p>
-              <label className="font-bold text-[#a20401] leading-[28px]" htmlFor="Subscription type">SUBSCRIPTION TYPE<small> <i>(If no option is selected your gym type would be regular)</i></small></label>
-              <select name="gym-option gym-dropdown " onChange={handleGymChange} value={selectedGym}>
-                {Object.keys(gymOptions).map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-              <div className="relative w-full">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                  <p className="text-gray-500 font-medium">₦</p>
-                </div>
-                <label className="font-bold text-[#a20401] leading-[28px]" htmlFor="Subscription type">FEE CHARGE</label>
+              <p className="text-[#707070] font-normal text-[13px]">Forget the old rules. You can have the best people.
+                Right now. Right here.</p>
+                <label htmlFor="">What languages do you need?</label>
+              <div className="flex items-center mb-3">
+                <span className="font-bold"><small>Translate From:</small></span>
                 <input
+                  className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300 ml-2"
                   type="text"
-                  defaultValue="25,000 - 37,000"
-                  className="border border-gray-300 text-gray-900 text-[15px] block w-full p-[15px] ps-10"
-                  placeholder="Amount"
-                  name="amount"
-                  value={amount}
-                  // value={formData.amount}
+                  name="trnaslate_from"
+                  placeholder="French"
                   onChange={handleChange}
-                  required
                 />
+              </div>
+              <div className="flex items-center mb-3">
+                <span className="font-bold"><small>Translate To:</small></span>
+                <input
+                  className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300 ml-2"
+                  type="text"
+                  name="tr"
+                  placeholder="English"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="relative w-full">
+                <label className="font-bold text-[#a20401] leading-[28px]" htmlFor="Subscription type">FEE CHARGE:</label>
+                <span><small> A connection fee of <b>₦25,800</b> is applied.</small></span>
               </div>
               <label className="font-bold text-[#a20401] leading-[28px]" htmlFor="Subscription type">PAYMENT CARD DETAILS</label>
               <form className="flex flex-wrap gap-3 w-full">
@@ -387,11 +384,11 @@ const Checkout = () => {
 
             <button
               type="submit"
-              className="text-base font-medium text-white bg-green-500 rounded-md md:rounded-md px-7 md:px-12 py-[15px] hover:bg-green-600 w-full mt-[22px] transition-colors"
+              className="text-base font-medium text-white bg-orange-500 rounded-md md:rounded-md px-7 md:px-12 py-[15px] hover:bg-green-600 w-full mt-[22px] transition-colors"
               // onClick={toggleShowInvoiceModal}
               onClick={handleSubmit}
             >
-              PROCEED
+              PAY NOW
             </button>
           </div>
         </section>
