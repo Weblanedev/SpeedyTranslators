@@ -232,7 +232,7 @@ const Checkout = () => {
           </div>
 
           <div className="flex flex-col gap-[15px] items-start w-full justify-center">
-            <h4 className="font-bold text-[#a20401] leading-[28px]">
+            <h4 className="font-bold text-[#f14f4a] leading-[28px]">
               Order translation from freelance translators
             </h4>
             <div className="flex flex-col items-start justify-center w-full gap-5">
@@ -260,10 +260,10 @@ const Checkout = () => {
                 />
               </div>
               <div className="relative w-full">
-                <label className="font-bold text-[#a20401] leading-[28px]" htmlFor="Subscription type">FEE CHARGE:</label>
+                <label className="font-bold text-[#f14f4a] leading-[28px]" htmlFor="Subscription type">FEE CHARGE:</label>
                 <span><small> A connection fee of <b>₦25,800</b> is applied.</small></span>
               </div>
-              <label className="font-bold text-[#a20401] leading-[28px]" htmlFor="Subscription type">PAYMENT CARD DETAILS</label>
+              <label className="font-bold text-[#f14f4a] leading-[28px]" htmlFor="Subscription type">PAYMENT CARD DETAILS</label>
               <form className="flex flex-wrap gap-3 w-full">
                 <label className="relative w-full flex flex-col">
                   <span className="font-bold mb-3">Card number</span>

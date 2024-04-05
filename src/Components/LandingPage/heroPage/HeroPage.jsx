@@ -8,7 +8,7 @@ const HeroPage = () => {
         <p className="hero__text">
           Your Professional <br /> Translation Services
         </p>
-        <button className="hero__btn">ORDER TRANSLATION</button>
+        <a href='/checkout' className="hero__btn">Get a translator now</a>
       </div>
     </>
   );
