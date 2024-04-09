@@ -24,22 +24,28 @@ const Footer = () => {
               </p> */}
             </div>
           </div>
+
           <div className="footer__top--container">
-            <div className="footer__title">Our Products</div>
-            <div className="footer__content">
-              <p className="footer__content--text">Privacy And Policy</p>
-              <p className="footer__content--text">Terms And conditions</p>
-            </div>
-          </div>
-          <div className="footer__top--container">
-            <div className="footer__title">Other Links</div>
+            <div className="footer__title">More Info</div>
             <div className="footer__content">
               <a href="/contactUs" className="footer__content--text">
                 Contact Us
               </a>
-              <a href="/aboutUs" className="footer__content--text">About Us</a>
-              <a href="/blog" className="footer__content--text">Blog</a>
+              <a href="/aboutUs" className="footer__content--text">
+                About Us
+              </a>
+              <a href="/blog" className="footer__content--text">
+                Blog
+              </a>
               {/* <p className="footer__content--text"></p> */}
+            </div>
+          </div>
+
+          <div className="footer__top--container">
+            <div className="footer__title">Other Links</div>
+            <div className="footer__content">
+              <a href="/privacy&policy" className="footer__content--text">Privacy And Policy</a>
+              <p className="footer__content--text">Terms And conditions</p>
             </div>
           </div>
         </div>

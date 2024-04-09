@@ -26,13 +26,15 @@
 .hero__btn{
     height: 70px;
     /* width: 1px; */
+    display: flex;
+    align-items: center;
     outline: none;
     border-radius: 50px;
     border: none;
     background-color: #f14f4a;
     color: #fff;
     font-weight: 900;
-    padding: 12px 35px;
+    padding: 0px 35px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
 }

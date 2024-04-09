@@ -6,6 +6,11 @@ import ContactUs from "./Components/contactUsPage/ContactUs";
 import AboutUs from "./Components/aboutUsPage/AboutUs";
 import AllPages from "./Components/AllPages/AllPages";
 import Checkout from "./Components/Checkout/Checkout";
+import PrivacyAndPolicy from "./Components/PrivacyAndPolicy/PrivacyAndPolicy";
+import Blogone from "./Components/blog/Blogone";
+import Blogtwo from "./Components/blog/Blogtwo";
+import Blogfour from "./Components/blog/Blogfour";
+import Blogthree from "./Components/blog/Blogthree";
 
 const route = createBrowserRouter([
   {
@@ -32,6 +37,27 @@ const route = createBrowserRouter([
         path: "/checkout",
         element: <Checkout />,
       },
+      {
+        path: "/privacy&policy",
+        element: <PrivacyAndPolicy />,
+      },
+      {
+        path: "/blog/blogone",
+        element: <Blogone />,
+      },
+      {
+        path: "/blog/blogtwo",
+        element: <Blogtwo />,
+      },
+      {
+        path: "/blog/blogthree",
+        element: <Blogthree />,
+      },
+      {
+        path: "/blog/blogfour",
+        element: <Blogfour />,
+      },
+
     ],
   },
 ]);
