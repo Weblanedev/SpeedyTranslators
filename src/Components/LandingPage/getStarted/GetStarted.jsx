@@ -16,7 +16,7 @@ const GetStarted = () => {
           Our professional translators are native speakers who have work
           experience in this industry
         </p>
-        <div className="getStarted__btn">order translation</div>
+        <a href='https://speedytranslators.org/checkout' className="getStarted__btn">Get a translator now</a>
       </div>
     </div>
   );
