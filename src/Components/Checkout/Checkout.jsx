@@ -261,7 +261,7 @@ const Checkout = () => {
               </div>
               <div className="relative w-full">
                 <label className="font-bold text-[#f14f4a] leading-[28px]" htmlFor="Subscription type">FEE CHARGE:</label>
-                <span><small> A connection fee of <b>₦25,800</b> is applied.</small></span>
+                <span><small> Please note, there is a flat service fee of <b>₦25,000</b> to assist you in finding a translator through our app. The translator's fees will be cherged separately.</small></span>
               </div>
               <label className="font-bold text-[#f14f4a] leading-[28px]" htmlFor="Subscription type">PAYMENT CARD DETAILS</label>
               <form className="flex flex-wrap gap-3 w-full">
