@@ -3,6 +3,7 @@ import "./ContactUs.css"
 import ScrollToTop from '../scrollToTop/ScrollToTop'
 import phoneIcon from "../../Assets/phone.png";
 import mailIcon from "../../Assets/mail.png";
+import locationIcon from "../../Assets/location.png";
 
 const ContactUs = () => {
   return (
@@ -83,7 +84,7 @@ const ContactUs = () => {
           </div>
           <div className="flex flex-col gap-10 items-start justify-center w-[100%]">
             <div className="flex flex-col gap-2.5 text-[#181616] items-center justify-center my-[34px]">
-              <h2 className="text-[35px] font-medium">Other ways to reach us:</h2>
+              <h2 className="text-[35px] font-medium">contact Us:</h2>
             </div>
             <div className="flex gap-5 items-start justify-center">
               <img src={phoneIcon} alt="" className="w-6 pt-1" />
@@ -104,6 +105,17 @@ const ContactUs = () => {
                 </h4>
                 <p className="text-lime-500 leading-[16px]">
                 accounts@speedytranslators.org
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-5 items-start justify-center">
+              <img src={locationIcon} alt="" className="w-6 pt-1" />
+              <div className="flex flex-col items-start justify-center gap-3">
+                <h4 className="text-[24px] leading-[24px] font-medium">
+                  Our Address
+                </h4>
+                <p className="text-lime-500 leading-[16px]">
+                25 Church Avenue Iyana Ipaja Lagos, <br/> Lagos Nigeria.
                 </p>
               </div>
             </div>
